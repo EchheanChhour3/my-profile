@@ -15,27 +15,13 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { name: "Home", href: "/" },
-  { name: "Features", href: "/features" },
+  { name: "Features", href: "/" },
   {
     name: "Products",
-    href: "/products",
-    hasDropdown: true,
-    dropdownItems: [
-      {
-        name: "Analytics",
-        href: "/analytics",
-        description: "Track your metrics",
-      },
-      {
-        name: "Dashboard",
-        href: "/dashboard",
-        description: "Manage your data",
-      },
-      { name: "Reports", href: "/reports", description: "Generate insights" },
-    ],
+    href: "/",
   },
-  { name: "Pricing", href: "/pricing" },
-  { name: "About", href: "/about" },
+  { name: "Pricing", href: "/" },
+  { name: "About", href: "/" },
 ];
 
 export default function Header() {
@@ -43,8 +29,6 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const { theme } = useTheme();
-
-
 
   const headerVariants = {
     initial: { y: -100, opacity: 0 },
@@ -60,11 +44,6 @@ export default function Header() {
   const mobileMenuVariants = {
     closed: { opacity: 0, height: 0 },
     open: { opacity: 1, height: "auto" },
-  };
-
-  const dropdownVariants = {
-    hidden: { opacity: 0, y: -10, scale: 0.95 },
-    visible: { opacity: 1, y: 0, scale: 1 },
   };
 
   return (
@@ -83,22 +62,23 @@ export default function Header() {
           : "transparent",
         boxShadow: isScrolled ? "0 8px 32px rgba(0, 0, 0, 0.1)" : "none",
       }}>
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl lg:w-full px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between lg:h-20">
+          {/* Logo */}
           <motion.div
             className="flex items-center space-x-2"
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}>
             <Link href="/" className="flex items-center space-x-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-rose-500 to-rose-700">
-                <Sparkles className="h-5 w-5 text-white" />
+              <div className="flex h-8 w-8 lg:h-10 lg:w-10 items-center justify-center rounded-lg bg-gradient-to-br from-rose-500 to-rose-700">
+                <Sparkles className="h-5 w-5  lg:h-7 lg:w-7 text-white" />
               </div>
-              <span className="bg-gradient-to-r from-rose-500 to-rose-700 bg-clip-text text-xl font-bold text-transparent">
-                Acme Inc.
+              <span className="bg-gradient-to-r from-rose-500 to-rose-700 bg-clip-text text-xl lg:text-3xl font-bold text-transparent">
+                Echhean Chhour
               </span>
             </Link>
           </motion.div>
-
+          {/* NavBar middle */}
           <nav className="hidden items-center space-x-8 lg:flex">
             {navItems.map((item) => (
               <div
@@ -110,7 +90,8 @@ export default function Header() {
                 onMouseLeave={() => setActiveDropdown(null)}>
                 <Link
                   href={item.href}
-                  className="flex items-center space-x-1 font-medium text-foreground transition-colors duration-200 hover:text-rose-500">
+                  className="flex items-center space-x-1 font-bold text-foreground transition-colors duration-200
+                   hover:text-rose-500 lg:text-[20px]">
                   <span>{item.name}</span>
                   {item.hasDropdown && (
                     <ChevronDown className="h-4 w-4 transition-transform duration-200" />
@@ -122,7 +103,6 @@ export default function Header() {
                     {activeDropdown === item.name && (
                       <motion.div
                         className="absolute left-0 top-full mt-2 w-64 overflow-hidden rounded-xl border border-border bg-background/95 shadow-xl backdrop-blur-lg"
-                        variants={dropdownVariants}
                         initial="hidden"
                         animate="visible"
                         exit="hidden"
@@ -152,14 +132,15 @@ export default function Header() {
 
           <div className="hidden items-center space-x-4 lg:flex">
             <Link
-              href="/login"
-              className="font-medium text-foreground transition-colors duration-200 hover:text-rose-500">
+              href="/"
+              className="font-medium text-foreground transition-colors duration-200 hover:text-rose-500 lg:text-[18px]">
               Sign In
             </Link>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 href="/signup"
-                className="inline-flex items-center space-x-2 rounded-full bg-gradient-to-r from-rose-500 to-rose-700 px-6 py-2.5 font-medium text-white transition-all duration-200 hover:shadow-lg">
+                className="inline-flex items-center space-x-2 rounded-full bg-gradient-to-r from-rose-500 to-rose-700 px-6 py-2.5 
+                font-medium text-white transition-all duration-200 hover:shadow-lg lg:text-xl">
                 <span>Get Started</span>
                 <ArrowRight className="h-4 w-4" />
               </Link>
