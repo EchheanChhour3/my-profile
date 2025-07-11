@@ -58,7 +58,7 @@ export default function FitnessHero() {
                       <div className="text-[30px] font-bold leading-[1.4] -tracking-[1px]">
                         4.8/5
                       </div>
-                      <div className="flex gap-[5px] text-base">
+                      <div className="flex gap-[5px] text-base flex-wrap">
                         <div className="flex gap-1">
                           <img
                             src="https://blocks.mvp-subha.me/assets/fitness-hero/icon.svg"
@@ -91,20 +91,15 @@ export default function FitnessHero() {
                             height="17"
                           />
                         </div>
-                        Rating
+                        <span>Rating</span>
                       </div>
                     </li>
                   </ul>
                 </div>
-                <div className="mx-4 flex justify-center">
-                {stats}
-                </div>
+                <div className="mx-4 flex justify-center">{stats}</div>
                 <div className="flex flex-wrap justify-center gap-5 sm:justify-normal">
                   <InteractiveHoverButton>
-                    <a
-                      href="/product">
-                      Start free trail 10days
-                    </a>
+                    <a href="/product">Start free trail 10days</a>
                   </InteractiveHoverButton>
                 </div>
               </div>

@@ -32,8 +32,8 @@ export default function State() {
               className="flex-1 flex gap-4 items-center justify-center xl:justify-start">
               <CountUp
                 end={item.num}
-                duration={5}
-                delay={2}
+                duration={3}
+                delay={1}
                 className="text-4xl xl:text-5xl font-extrabold dark:text-white text-black"
               />
               <p

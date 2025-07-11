@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 export const Section3 = () => {
   return (
-    <div className="grid justify-between 2xl:grid-cols-2 mx-40 my-20">
+    <div className="grid justify-between grid-cols-2 mx-40 my-20 gap-4">
       <div>
         <section className="grid place-content-center px-8 py-24">
           <h1>hello</h1>
@@ -20,9 +20,7 @@ export const Section3 = () => {
           Facebook
         </FlipLink>
         <div className="text-white">
-          <FlipLink href="https://www.instagram.com/cxopoo1_?igsh=MXg2bTBoa2RucW56bw%3D%3D&utm_source=qr">
-            Instagram
-          </FlipLink>
+          <FlipLink href="https://www.instagram.com/cxopoo1_?igsh=MXg2bTBoa2RucW56bw%3D%3D&utm_source=qr">Instagram</FlipLink>
         </div>
       </section>
     </div>
