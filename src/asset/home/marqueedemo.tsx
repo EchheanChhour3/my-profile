@@ -1,5 +1,7 @@
 import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/magicui/marquee";
+// At the top of your file
+import Image from "next/image";
 
 const reviews = [
   {
@@ -48,9 +50,11 @@ const ReviewCard = ({ img }: { img: string }) => {
         "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]",
         "dark:border-gray-50/[.1] dark:bg-gray-50/[.10] dark:hover:bg-gray-50/[.15]"
       )}>
-      <img
+      <Image
         src={img}
         alt="Logo"
+        width={112}
+        height={40} 
         className="h-10 w-28 mx-auto brightness-0 dark:invert"
       />
     </figure>

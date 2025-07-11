@@ -1,4 +1,8 @@
-import { Button } from '@/components/ui/button';
+
+import { InteractiveHoverButton } from "@/components/magicui/interactive-hover-button";
+import State from "../state";
+
+const stats = <State/>
 
 export default function FitnessHero() {
   return (
@@ -92,15 +96,16 @@ export default function FitnessHero() {
                     </li>
                   </ul>
                 </div>
-
+                <div className="mx-4 flex justify-center">
+                {stats}
+                </div>
                 <div className="flex flex-wrap justify-center gap-5 sm:justify-normal">
-                  <a href="#" className="group relative z-10 inline-block">
-                    <Button
-                      className="rounded-full shadow-md shadow-foreground/30"
-                      size="lg">
-                      Start a 10-day free trial
-                    </Button>
-                  </a>
+                  <InteractiveHoverButton>
+                    <a
+                      href="/product">
+                      Start free trail 10days
+                    </a>
+                  </InteractiveHoverButton>
                 </div>
               </div>
             </div>
@@ -109,23 +114,17 @@ export default function FitnessHero() {
                 <img
                   src="img/20250710_1938_Luxurious_Portrait_Transformation_remix_01jzt5dn3pe41az1qfg61r9rsc-removebg-preview.png"
                   alt="My-Profile"
-                  width="6125"
-                  height="1272"
-                  className="z-10 mx-auto h-[735px] w-[500px]"
+                  className="z-10 mx-auto lg:h-[650px] lg:w-[500px] 2xl:h-[735px] 2xl:w-[500px] h-[300px] w-[231px] md:h-[550px] md:w-[400px]"
                 />
                 <img
                   src="https://blocks.mvp-subha.me/assets/fitness-hero/shape1.svg"
                   alt="hero-2-shape-1"
-                  width="110"
-                  height="191"
                   className="xxl:left-[6%] absolute -left-[12%] bottom-[38%] -z-10 xl:-left-[2%]"
                 />
                 <img
                   src="https://blocks.mvp-subha.me/assets/fitness-hero/shape2.svg"
                   alt="hero-2-shape-1"
-                  width="292"
-                  height="299"
-                  className="absolute -right-[18%] top-[15%] -z-10"
+                  className="absolute -right-[18%] top-[15%] -z-10 "
                 />
               </div>
             </div>
